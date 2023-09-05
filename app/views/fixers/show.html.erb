@@ -1,0 +1,5 @@
+<%= cl_image_tag @fixer.photo.key, height: 300, width: 400, crop: :fill %>
+<h1><%= @fixer.name %></h1>
+<% @fixer.categories.each do |category| %>
+<p> <%= category.name.capitalize %></p>
+<% end %>
