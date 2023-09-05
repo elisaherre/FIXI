@@ -1,0 +1,21 @@
+<h1>My profile</h1>
+
+<p>Name: <%= @user.name %></p>
+<p>Address: <%= @user.address %></p>
+<% if @user.is_a?(Fixer) %>
+<p>Fixer since: <%= @user.created_at %></p>
+<% else %>
+<p>Registration date: <%= @user.created_at %></p>
+<% end %>
+<p>Email: <%= @user.email %></p>
+<% if @user.is_a?(Fixer) %>
+<h4>Categories</h4>
+<% @user.categories.each do |category| %>
+<li><%= category.name %></li>
+<% end %>
+<% end %>
+<% if @user.is_a?(Fixer) %>
+<%= link_to "Editar",  edit_fixer_registration_path, class: "btn btn-primary" %>
+<% else %>
+<%= link_to "Editar",  edit_user_registration_path, class: "btn btn-primary" %>
+<% end %>
