@@ -1,0 +1,15 @@
+<div>
+  <h1><%= @category.name.capitalize %></h1>
+    <div>
+      <% if @fixers.size > 0 %>
+        <% @fixers.each do |fixer| %>
+          <% if fixer.photo.key != nil %>
+          <%= cl_image_tag(fixer.photo.key, height: 50, width: 50, crop: :fill) %>
+          <% end %>
+        <%= fixer.name %>
+        <% end %>
+      <% else %>
+        <p>No hay fixers en esta categoría</p>
+      <% end %>
+    </div>
+</div>
