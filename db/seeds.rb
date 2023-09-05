@@ -49,11 +49,11 @@ file = URI.open("https://img.freepik.com/foto-gratis/hombre-mayor-mono-azul-suje
 fixer2 = Fixer.new(email: "plomero@gmail.com", password: "123456", address: "calle 123", name: "Pepe")
 fixer2.photo.attach(io: file, filename: "plomero.png", content_type: "image/png")
 fixer2.save!
-fixer1.fixer_categories.create!(category: category2)
+fixer2.fixer_categories.create!(category: category2)
 
 puts "creando fixer 3..."
 file = URI.open("https://img.freepik.com/foto-gratis/alegre-anciano-cortando-arbustos-demasiado-grandes_651396-1547.jpg?w=1800&t=st=1693925532~exp=1693926132~hmac=0ddc7a16a110e54c5dfe9a92acf7788d80c9440db5fac560343ea9679fb2b526")
 fixer3 = Fixer.new(email: "jardinero@gmail.com", password: "123456", address: "calle 123", name: "Mateo")
 fixer3.photo.attach(io: file, filename: "jardinero.png", content_type: "image/png")
 fixer3.save!
-fixer1.fixer_categories.create!(category: category3)
+fixer3.fixer_categories.create!(category: category3)
