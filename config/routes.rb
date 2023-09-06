@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   get "categories/:id", to: "categories#show", as: "category"
+  # get "user_reviews/new", to: "user_reviews#new", as: new_user_review
+  resources :users, only: [] do
+    resources :user_reviews, only: [:new, :create]
+  end
 end
